@@ -22,7 +22,7 @@
             <i class="icon ion-navicon"></i>
           </button>
       
-          <h1 class="title">TODO</h1>
+          <h1 class="title">{{activeProject.title}} ({{activeProject.tasks.length}})</h1>
 
           <button class="button button-icon" ng-click="newTask()">
             <i class="icon ion-compose"></i>
@@ -41,14 +41,14 @@
       <ion-side-menu side="left">
         <!-- Left sidebar content goes here -->
         <ion-header-bar class="bar-dark">
-          <h1 class="title">Projects</h1>
+          <h1 class="title">Projects ({{projects.length}})</h1>
 
           <button class="button button-icon ion-plus" ng-click="newProject()"></button>
         </ion-header-bar>
 
         <ion-content scroll="false">
           <ion-list>
-            <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)" ng-class="{ active : activeProject == project }">
+            <ion-item ng-repeat="project in projects" ng-click="selectProject(project, $index)">
               {{project.title}}
             </ion-item>
           </ion-list>

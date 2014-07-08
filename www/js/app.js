@@ -33,7 +33,7 @@ angular.module('todo', ['ionic'])
   };
 })
 
-.controller('TodoCtrl', function($scope, $ionicModal) {
+.controller('TodoCtrl', function($scope, $timeout, $ionicModal, Projects, $ionicSideMenuDelegate) {
   // A utility function for creating a new project
   // with the given projectTitle
   var createProject = function(projectTitle) {
